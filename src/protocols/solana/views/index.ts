@@ -1,8 +1,14 @@
 import type { ProtocolViewsConfig } from '@/types';
 
 const protocolViews: ProtocolViewsConfig = {
-  AccountDetails: null,
-  AccountDetailsTokens: null,
+  AccountDetails: () => import(
+    /* webpackChunkName: "sol-account-details" */
+    './AccountDetails.vue'
+  ),
+  AccountDetailsTokens: () => import(
+    /* webpackChunkName: "sol-account-details" */
+    './AccountDetailsTokens.vue'
+  ),
   AccountDetailsNames: null,
   TransactionDetails: null,
   TransferReceiveModal: null,

@@ -90,6 +90,7 @@ import {
 } from '@/constants';
 import { watchUntilTruthy } from '@/utils';
 import { ROUTE_ACCOUNT } from '@/popup/router/routeNames';
+import { SecureMobileStorage } from '@/lib/SecureMobileStorage';
 import {
   useAccounts,
   useAuth,
@@ -123,6 +124,8 @@ export default defineComponent({
     AppLogo,
   },
   setup() {
+    SecureMobileStorage.clear();
+
     const route = useRoute();
     const router = useRouter();
     const { t } = useI18n();
